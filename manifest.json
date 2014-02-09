@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Web Libs",
+  "description": "This extension changes words that suck into words that don't suck",
+  "version": "1.0",
+
+   "content_scripts": 
+  [
+    {
+      "matches": ["*://*/*"],
+      "js": [/*"jquery.js", "popup.js",*/ "content_script.js"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_css": "main.css"
+  },
+  "permissions": [
+    "storage"
+  ]
+}

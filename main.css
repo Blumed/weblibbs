@@ -1,0 +1,21 @@
+     *, *:before, *:after {
+       -webkit-box-sizing: border-box: border-box;
+     }
+      body {
+        min-width: 357px;
+        overflow-x: hidden;
+        background: #666;
+      }
+
+      input, button {
+        outline: none;
+        border: 0;
+        padding: .5em;
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica, Arial", "Lucid Grande", sans-serif;
+        font-weight: 300;
+      }
+      input {color: #ccc;}
+      button {
+        background: red;
+        color: #FFF;
+      }
