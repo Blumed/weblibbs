@@ -19,6 +19,7 @@ function getWords(){
 
 $(document).ready(function(){
 	$("#submit-button").click(addWord)
+	$("#clear-button").click(clearAllWords)
 });
 
 chrome.runtime.onMessage.addListener(
@@ -28,3 +29,15 @@ chrome.runtime.onMessage.addListener(
     }
   }
 )
+
+function clearAllWords(){
+	var storage = getWords()
+	storage.words.push( { bad: $("#bad").val(), good: $("#good").val()} )
+	localStorage.removeItem("web libs")
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+  		chrome.tabs.sendMessage(tabs[0].id, storage, function() {
+  		})
+	})
+}
+
+
