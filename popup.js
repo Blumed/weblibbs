@@ -8,6 +8,28 @@ function addWord(){
   		chrome.tabs.sendMessage(tabs[0].id, storage, function() {
   		})
 	})
+    listWords( $("#words-list") )
+}
+
+function listWords(el){
+    tbl = $("<table></table>")
+    var storage = getWords()
+    for( i in storage.words ){
+        tbl.append( 
+            "<tr id='word"+i+"' >" +
+            "<td>" + storage.words[i].bad + "</td>" + 
+            "<td><i> becomes </i></td>" + 
+            "<td>" + storage.words[i].good + "</td>" + 
+            "</tr>"
+        );
+    }
+    if(storage.words.length == 0) { 
+        el.hide()
+    }
+    else {
+        el.show()
+    }
+    el.html(tbl)
 }
 
 function getWords(){
@@ -20,6 +42,7 @@ function getWords(){
 $(document).ready(function(){
 	$("#submit-button").click(addWord)
 	$("#clear-button").click(clearAllWords)
+    listWords( $("#words-list") )
 });
 
 chrome.runtime.onMessage.addListener(
@@ -38,6 +61,7 @@ function clearAllWords(){
   		chrome.tabs.sendMessage(tabs[0].id, storage, function() {
   		})
 	})
+    listWords( $("#words-list") )
 }
 
 

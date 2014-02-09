@@ -19,3 +19,11 @@
         background: red;
         color: #FFF;
       }
+
+      #words-list {
+        display: none;
+        
+      }
+      #words-list table tr td {
+        background-color: #ccc;
+      }
