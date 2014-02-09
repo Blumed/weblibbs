@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+function applyWords(request, sender, sendResponse) {
+        if(request != undefined && request.words != undefined) 
+                walk(document.body,request.words)
+}
 //ask for the words from the extension.  
-chrome.runtime.sendMessage({greeting: "giveMeWords"}, function(response) {
-    walk(document.body,response.words)
-})
+chrome.runtime.sendMessage({greeting: "giveMeWords"}, applyWords )
 
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    walk(document.body,request.words)
-  })
+chrome.runtime.onMessage.addListener( applyWords )
+
 function walk(node,arr)
 {
         // I stole this function from here:
