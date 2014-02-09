@@ -1,4 +1,4 @@
 weblibbs
 ========
 
-Chrome ext for people who are dope.
+Chrome ext for people who are *dope*.
