@@ -45,14 +45,6 @@ $(document).ready(function(){
     listWords( $("#words-list") )
 });
 
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    if (request.greeting == "giveMeWords"){
-      sendResponse(getWords())
-    }
-  }
-)
-
 function clearAllWords(){
 	var storage = getWords()
 	storage.words.push( { bad: $("#bad").val(), good: $("#good").val()} )
