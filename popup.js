@@ -64,4 +64,3 @@ function clearAllWords(){
     listWords( $("#words-list") )
 }
 
-

@@ -7,11 +7,13 @@
     <script src="popup.js"></script>
   </head>
   <body>
-    <input type="text" id="bad" placeholder="Hate" pattern="[0-9][A-Z]{3}"/>
-    <input type="text" id="good" placeholder="Love" pattern="[0-9][A-Z]{3}"/>
+    <form action="">
+      <input type="text" id="bad" placeholder="Hate" pattern="[0-9][A-Z]{3}"/>
+      <input type="text" id="good" placeholder="Love" pattern="[0-9][A-Z]{3}"/>
     
-    <button type="submit" id="submit-button" value="submit">Submit</button>
-    <button type="submit" id="clear-button" value="clear">Clear</button>
+      <button type="submit" id="submit-button" value="submit">Submit</button>
+      <button type="submit" id="clear-button" value="clear">Clear</button>
+    </form>
     <div id='words-list'></div>
   </body>
 </html>
