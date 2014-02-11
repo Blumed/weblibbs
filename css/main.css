@@ -1,0 +1,51 @@
+     *, *:before, *:after {
+       -webkit-box-sizing: border-box: border-box;
+     }
+
+       .cf:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+  }
+
+      body {
+        min-width: 360px;
+        overflow-x: hidden;
+      }
+
+      h1 { text-align: center; background: ; }
+
+      form section { display: block; }
+
+      input, button, li, h1, h2, h3, p {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica, Arial", "Lucid Grande", sans-serif;
+        font-weight: 300;
+        letter-spacing: .1rem;
+      }
+
+      input, button { border: 0; outline: none; padding: .8em; border-radius: 2px;}
+
+      input {
+        color: #ccc; 
+        width: 42%;; 
+        border: 1px solid #666;
+        float: right;
+      }
+
+      input:first-child { float: left; }
+
+      form section:last-child { margin: 1rem 0; float: right;}
+
+      button {
+        background: red;
+        color: #FFF;
+      }
+
+      #words-list ul { padding: 0; list-style: none; }
+
+      #words-list {
+        display: none;
+        
+      }
