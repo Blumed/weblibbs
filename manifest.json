@@ -10,7 +10,7 @@
     {
       "matches": ["*://*/*"],
       "js": ["content_script.js"],
-      "run_at": "document_end",
+       "run_at": "document_end",
       "all_frames": true
     }
   ],

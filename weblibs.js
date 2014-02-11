@@ -12,15 +12,15 @@ function addWord(){
 }
 
 function listWords(el){
-    tbl = $("<table></table>")
+    ul = $("<ul></ul>")
     var storage = getWords()
     for( i in storage.words ){
-        tbl.append( 
-            "<tr id='word"+i+"' >" +
-            "<td>" + storage.words[i].bad + "</td>" + 
-            "<td><i> becomes </i></td>" + 
-            "<td>" + storage.words[i].good + "</td>" + 
-            "</tr>"
+        ul.append( 
+            "<li id='word"+i+"' >" +
+            "<span>" + storage.words[i].bad + "</span>" + 
+            "<span> - </span>" + 
+            "<span>" + storage.words[i].good + "</span>" + 
+            "</li>"
         );
     }
     if(storage.words.length == 0) { 
@@ -29,7 +29,7 @@ function listWords(el){
     else {
         el.show()
     }
-    el.html(tbl)
+    el.html(ul)
 }
 
 function getWords(){
@@ -46,11 +46,9 @@ $(document).ready(function(){
 });
 
 function clearAllWords(){
-	var storage = getWords()
-	storage.words.push( { bad: $("#bad").val(), good: $("#good").val()} )
 	localStorage.removeItem("web libs")
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-  		chrome.tabs.sendMessage(tabs[0].id, storage, function() {
+  		chrome.tabs.sendMessage(tabs[0].id, getWords(), function() {
   		})
 	})
     listWords( $("#words-list") )
