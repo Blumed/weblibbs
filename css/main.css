@@ -1,6 +1,7 @@
-     *, *:before, *:after {
-       -webkit-box-sizing: border-box: border-box;
-     }
+ /* apply a natural box layout model to all elements */
+*, *:before, *:after {
+ -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
 
        .cf:after { 
    content: "."; 
@@ -15,11 +16,11 @@
         overflow-x: hidden;
       }
 
-      h1 { text-align: center; background: ; }
+      h1 { text-align: center; }
 
       form section { display: block; }
 
-      input, button, li, h1, h2, h3, p {
+      input, button, td, h1, h2, h3, p {
         font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica, Arial", "Lucid Grande", sans-serif;
         font-weight: 300;
         letter-spacing: .1rem;
@@ -29,7 +30,7 @@
 
       input {
         color: #ccc; 
-        width: 42%;; 
+        width: 49%; 
         border: 1px solid #666;
         float: right;
       }
@@ -43,7 +44,7 @@
         color: #FFF;
       }
 
-      #words-list ul { padding: 0; list-style: none; }
+      #words-list tr { padding: 0; }
 
       #words-list {
         display: none;
