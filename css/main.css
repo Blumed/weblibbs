@@ -12,15 +12,15 @@
   }
 
       body {
-        min-width: 360px;
-        overflow-x: hidden;
+        width: 360px;
+        overflow: hidden;
       }
 
-      h1 { text-align: center; }
+      img.logo { float: right; display: inline-block; margin: 1em 1em 0 0; height: 70px;}
 
       form section { display: block; }
 
-      input, button, td, h1, h2, h3, p {
+      input, button, td, h1, h2, h3, p, label {
         font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica, Arial", "Lucid Grande", sans-serif;
         font-weight: 300;
         letter-spacing: .1rem;
@@ -36,17 +36,82 @@
       }
 
       input:first-child { float: left; }
-
-      form section:last-child { margin: 1rem 0; float: right;}
+      form section:first-child { text-align: right;}
+      form section:last-child { margin: 1rem 0; overflow: hidden;}
 
       button {
         background: red;
         color: #FFF;
       }
-
-      #words-list tr { padding: 0; }
+      
+      #words-list tr { display: inline-flex; width: 360px;}
+      td { width: 10px; }
+      td:first-child, td:last-child { width: 160px; word-break: break-word; padding: 2%; }
 
       #words-list {
         display: none;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 187px;
         
       }
+
+
+      /* TABBBZZZ*/
+      
+      .tabs {
+  position: relative;   
+  min-height: 387px; /* This part sucks */
+  clear: both;
+}
+
+.tab {
+  float: left;
+}
+
+.tab label {
+  background: #eee; 
+  padding: 10px; 
+  margin-left: -1px; 
+  position: relative;
+  left: 1px; 
+}
+.tab [type=radio] {
+  display: none;   
+}
+.content {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  padding: 1em;
+  overflow: hidden;
+}
+
+.content2{
+  background: #eee;
+}
+
+[type=radio]:checked ~ label {
+  background: #fff;
+  border-bottom: 1px solid #fff;
+  z-index: 2;
+}
+[type=radio]:checked ~ label ~ .content {
+  z-index: 1;
+}
+
+[type=radio]:checked ~ label ~ .content > * {
+opacity: 1;
+-webkit-transform: translateX(0);
+}
+.content > * {
+opacity: 0;
+-webkit-transform: translate3d(0, 0, 0);
+-webkit-transform: translateX(-100%);
+-webkit-transition: all 0.6s ease;
+
+}
+

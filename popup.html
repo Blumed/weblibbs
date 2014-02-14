@@ -7,17 +7,35 @@
     <script src="js/weblibs.js"></script>
   </head>
   <body>
-    <h1>LOGO</h1>
-    <form action="" class="cf">
-    <section class="cf">
-      <input type="text" id="bad" placeholder="Bad" autofocus="autofocus"/>
-      <input type="text" id="good" placeholder="Good"/>
-    </section>
-    <section>
-      <button type="submit" id="submit-button" value="submit">Submit</button>
-      <button type="submit" id="clear-button" value="clear">Clear</button>
-    </section>
-    </form>
-    <div id='words-list'></div>
+    <img src="img/logo.png" alt="Logo" class="logo"/>
+    <div class="tabs">
+    
+     <div class="tab">
+         <input type="radio" id="tab-1" name="tab-group-1" checked>
+         <label for="tab-1">Weblib</label>
+         
+         <div class="content">
+          <form action="" class="cf">
+          <section class="">
+            <button type="submit" id="submit-button" value="submit">Submit</button>
+            <button type="submit" id="clear-button" value="clear">Clear</button>
+          </section>
+          <section class="cf">
+            <input type="text" id="bad" placeholder="Bad" autofocus="autofocus"/>
+            <input type="text" id="good" placeholder="Good"/>
+          </section>
+          </form>
+          <div id='words-list'></div>
+          </div>
+          </div>
+
+           <div class="tab">
+               <input type="radio" id="tab-2" name="tab-group-1">
+               <label for="tab-2">Settings</label>
+               <div class="content content2">
+                <h1>Hey look number two!</h1>
+               </div>
+          </div>
+         </div>
   </body>
 </html>

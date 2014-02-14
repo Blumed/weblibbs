@@ -12,13 +12,13 @@ function addWord(){
 }
 
 function listWords(el){
-    tbl = $("<ul></ul>")
+    tbl = $("<tbody></tbody>")
     var storage = getWords()
     for( i in storage.words ){
         tbl.append( 
             "<tr id='word"+i+"' >" +
             "<td>" + storage.words[i].bad + "</td>" + 
-            "<td> - </td>" + 
+            "<td>&nbsp;</td>" +
             "<td>" + storage.words[i].good + "</td>" + 
             "</tr>"
         );
@@ -53,4 +53,5 @@ function clearAllWords(){
 	})
     listWords( $("#words-list") )
 }
+
 

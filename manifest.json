@@ -23,7 +23,7 @@
   "background": {
     "scripts": ["js/background.js", "js/weblibs.js"]  },
 
-  "permissions": [
-    "storage"
-  ]
+  "permissions": ["tabs"]
+
+
 }
