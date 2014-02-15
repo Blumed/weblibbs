@@ -1,22 +1,29 @@
- /* apply a natural box layout model to all elements */
-*, *:before, *:after {
- -webkit-box-sizing: border-box; box-sizing: border-box;
- }
+       /* apply a natural box layout model to all elements */
+      *, *:before, *:after {
+       -webkit-box-sizing: border-box; box-sizing: border-box;
+       }
 
-       .cf:after { 
-   content: "."; 
-   visibility: hidden; 
-   display: block; 
-   height: 0; 
-   clear: both;
-  }
+      .cf:after { 
+       content: "."; 
+       visibility: hidden; 
+       display: block; 
+       height: 0; 
+       clear: both;
+      }
 
       body {
         width: 360px;
         overflow: hidden;
       }
 
-      img.logo { float: right; display: inline-block; margin: 1em 1em 0 0; height: 70px;}
+      .logo { float: right; display: inline-block; margin: 1em 1em 0 0; height: 70px;}
+
+      button {
+        background: #666;
+        color: #FFF;
+        font-size: 1rem;
+        height: 44px;
+      }
 
       form section { display: block; }
 
@@ -26,23 +33,19 @@
         letter-spacing: .1rem;
       }
 
-      input, button { border: 0; outline: none; padding: .8em; border-radius: 2px;}
+      input, button, .tab label { border: 0; outline: none; padding: .8rem; border-radius: 4px;}
 
       input {
-        color: #ccc; 
+        color: #666; 
         width: 49%; 
         border: 1px solid #666;
         float: right;
+        font-size: .8rem;
       }
 
       input:first-child { float: left; }
-      form section:first-child { text-align: right;}
-      form section:last-child { margin: 1rem 0; overflow: hidden;}
-
-      button {
-        background: red;
-        color: #FFF;
-      }
+      form section:first-child { text-align: right; margin-right: -2px; }
+      form section:last-child { margin: 0.4rem 0 1rem 0; overflow: hidden;}
       
       #words-list tr { display: inline-flex; width: 360px;}
       td { width: 10px; }
@@ -60,58 +63,56 @@
       /* TABBBZZZ*/
       
       .tabs {
-  position: relative;   
-  min-height: 387px; /* This part sucks */
-  clear: both;
-}
+        position: relative;   
+        min-height: 387px; /* This part sucks */
+        margin: 2rem 0 0 0;
+      }
 
-.tab {
-  float: left;
-}
+      .tab {
+        float: left;
+      }
 
-.tab label {
-  background: #eee; 
-  padding: 10px; 
-  margin-left: -1px; 
-  position: relative;
-  left: 1px; 
-}
-.tab [type=radio] {
-  display: none;   
-}
-.content {
-  position: absolute;
-  top: 28px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #fff;
-  padding: 1em;
-  overflow: hidden;
-}
+      .tab label {
+        background: #fff; 
+        margin-left: -1px; 
+        position: relative;
+        left: 1px; 
+      }
+      .tab [type=radio] {
+        display: none;   
+      }
+      .content {
+        position: absolute;
+        top: 28px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        padding: 1em;
+        overflow: hidden;
+      }
 
-.content2{
-  background: #eee;
-}
+      .content2{
+        background: #eee;
+      }
 
-[type=radio]:checked ~ label {
-  background: #fff;
-  border-bottom: 1px solid #fff;
-  z-index: 2;
-}
-[type=radio]:checked ~ label ~ .content {
-  z-index: 1;
-}
+      [type=radio]:checked ~ label {
+        background: #eee;
+        z-index: 2;
+      }
+      [type=radio]:checked ~ label ~ .content {
+        z-index: 1;
+      }
 
-[type=radio]:checked ~ label ~ .content > * {
-opacity: 1;
--webkit-transform: translateX(0);
-}
-.content > * {
-opacity: 0;
--webkit-transform: translate3d(0, 0, 0);
--webkit-transform: translateX(-100%);
--webkit-transition: all 0.6s ease;
+      [type=radio]:checked ~ label ~ .content > * {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+      }
+      .content > * {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+      -webkit-transform: translateX(-100%);
+      -webkit-transition: all 0.6s ease;
 
-}
+      }
 

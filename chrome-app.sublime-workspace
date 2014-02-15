@@ -76,18 +76,26 @@
 			}
 		},
 		{
-			"file": "css/main.css",
+			"file": "popup.html",
 			"settings":
 			{
-				"buffer_size": 2330,
+				"buffer_size": 1318,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "popup.html",
+			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 1276,
+				"buffer_size": 2346,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/weblibs.js",
+			"settings":
+			{
+				"buffer_size": 1460,
 				"line_ending": "Unix"
 			}
 		}
@@ -335,7 +343,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -368,59 +376,31 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "css/main.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2330,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								390,
-								390
-							]
-						],
-						"settings":
-						{
-							"auto_indent": true,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "popup.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1276,
+						"buffer_size": 1318,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								221,
-								221
+								1196,
+								1196
 							]
 						],
 						"settings":
 						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
 							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -430,6 +410,72 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "css/main.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2346,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1943,
+								1943
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 832.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/weblibs.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								481,
+								481
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
