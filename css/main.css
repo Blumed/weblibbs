@@ -35,7 +35,7 @@
 
       input, button, .tab label { border: 0; outline: none; padding: .8rem; border-radius: 4px;}
 
-      input {
+      input[type='text'] {
         color: #666; 
         width: 49%; 
         border: 1px solid #666;
@@ -89,7 +89,9 @@
         bottom: 0;
         background: #fff;
         padding: 1em;
+        /*
         overflow: hidden;
+        */
       }
 
       .content2{

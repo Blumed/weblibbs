@@ -38,8 +38,18 @@ function handleText( textNode, arr, parentNode,ctr ){
     if( text == undefined ){
         parentNode.setAttribute( datattr, text = textNode.nodeValue )
     }
-    for( i in arr){ 
-        text  = text.replace( new RegExp( arr[i].bad,"gi"), arr[i].good)
+    var regex_str
+    for(var i in arr){ 
+        regex_str = arr[i].bad
+        if( arr[i].caseInsensitive) 
+            regex_opts = "gi" 
+        else 
+            regex_opts = "g"
+        if( arr[i].beginningOfWord )
+            regex_str = "\\b" + regex_str
+        if( arr[i].endOfWord )
+            regex_str = regex_str + "\\b"
+        text  = text.replace( new RegExp( regex_str, regex_opts ), arr[i].good)
     }
     textNode.nodeValue = text
 }
