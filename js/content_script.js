@@ -4,49 +4,47 @@
 
 function applyWords(request, sender, sendResponse) {
         if(request != undefined && request.words != undefined) 
-                walk(document.body,request.words)
+                walk(document.body,request.words,0)
 }
-//ask for the words from the extension.  
-chrome.runtime.sendMessage({greeting: "giveMeWords"}, applyWords )
-
-chrome.runtime.onMessage.addListener( applyWords )
-
-function walk(node,arr)
+function walk(node,arr,parentNode,ctr)
 {
-        // I stole this function from here:
-        // http://is.gd/mwZp7E
-
-        var child, next;
-
+        // I stole this function from here: http://is.gd/mwZp7E
+        var child, next
+        if( ctr == undefined ) ctr = 0
         switch ( node.nodeType )
         {
-                case 1:  // Element
-                case 9:  // Document
-                case 11: // Document fragment
-                        child = node.firstChild;
-                        while ( child )
-                        {
-                                next = child.nextSibling;
-                                walk(child,arr);
-                                child = next;
-                        }
-                        break;
-
-                case 3: // Text node
-            if(node.parentElement.tagName.toLowerCase() != "script") {
-                handleText(node,arr);
-            }
-                        break;
+            case 1:  // Element
+            case 9:  // Document
+            case 11: // Document fragment
+                child = node.firstChild
+                while ( child )
+                {
+                    ctr = ctr + 1
+                    walk(child,arr,node,ctr)
+                    child = child.nextSibling
+                }
+                break
+            case 3: // Text node
+                if(node.parentElement.tagName.toLowerCase() != "script") {
+                    handleText(node,arr,parentNode, ctr);
+                }
+                break
         }
 }
 
-function handleText(textNode,arr) {
-        var v = textNode.nodeValue;
-
-  // Deal with the easy case
-
-for( i in arr){ 
-  v = v.replace( new RegExp( arr[i].bad,"gi"), arr[i].good)}
-
-        textNode.nodeValue = v;
+function handleText( textNode, arr, parentNode,ctr ){
+    var datattr = "data-weblibbs_original" + ctr
+    var text = parentNode.getAttribute(datattr)
+    if( text == undefined ){
+        parentNode.setAttribute( datattr, text = textNode.nodeValue )
+    }
+    for( i in arr){ 
+        text  = text.replace( new RegExp( arr[i].bad,"gi"), arr[i].good)
+    }
+    textNode.nodeValue = text
 }
+
+//ask for the words from the extension.  
+chrome.runtime.onMessage.addListener( applyWords )
+chrome.runtime.sendMessage({greeting: "giveMeWords"}, applyWords )
+
