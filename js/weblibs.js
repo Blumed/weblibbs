@@ -1,7 +1,13 @@
 function addWord(){
 	var storage = getWords()
     if( $("#bad").val() == "" || $("#good").val() == "" ) return;
-	storage.words.push( { bad: $("#bad").val(), good: $("#good").val()} )
+	storage.words.push( { 
+        bad: $("#bad").val(), 
+        good: $("#good").val(),
+        beginningOfWord: $("#beginningofword").is(':checked'),
+        endOfWord: $("#endofword").is(':checked'),
+        caseInsensitive: $("#caseinsensitive").is(':checked')
+    } )
 	localStorage.setItem("web libs", JSON.stringify(storage))
 	$("#bad").val("")
 	$("#good").val("")
@@ -11,6 +17,7 @@ function addWord(){
        }
 	})
     listWords( $("#words-list") )
+    return false;
 }
 
 function listWords(el){

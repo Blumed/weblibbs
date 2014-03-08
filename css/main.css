@@ -89,7 +89,9 @@
         bottom: 0;
         background: #fff;
         padding: 1em;
+        /*
         overflow: hidden;
+        */
       }
 
       .content2{
