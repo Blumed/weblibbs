@@ -1,12 +1,14 @@
 function addWord(){
 	var storage = getWords()
+    if( $("#bad").val() == "" || $("#good").val() == "" ) return;
 	storage.words.push( { bad: $("#bad").val(), good: $("#good").val()} )
 	localStorage.setItem("web libs", JSON.stringify(storage))
 	$("#bad").val("")
 	$("#good").val("")
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-  		chrome.tabs.sendMessage(tabs[0].id, storage, function() {
-  		})
+       for( var i in tabs ){
+  		  chrome.tabs.sendMessage(tabs[i].id, storage, function() { } )
+       }
 	})
     listWords( $("#words-list") )
 }
@@ -14,7 +16,7 @@ function addWord(){
 function listWords(el){
     tbl = $("<tbody></tbody>")
     var storage = getWords()
-    for( i in storage.words ){
+    for( var i in storage.words ){
         tbl.append( 
             "<tr id='word"+i+"' >" +
             "<td>" + storage.words[i].bad + "</td>" + 
@@ -48,8 +50,9 @@ $(document).ready(function(){
 function clearAllWords(){
 	localStorage.removeItem("web libs")
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-  		chrome.tabs.sendMessage(tabs[0].id, getWords(), function() {
-  		})
+        for( var i in tabs ){
+  		    chrome.tabs.sendMessage(tabs[i].id, getWords(), function() { })
+        }
 	})
     listWords( $("#words-list") )
 }
